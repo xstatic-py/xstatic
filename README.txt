@@ -6,9 +6,15 @@ with minimal overhead - without selling you some dependencies you don't want.
 
 XStatic has some minimal support code for working with the XStatic-* packages.
 
-Docs: http://readthedocs.org/docs/xstatic/en/latest/
+Docs: https://xstatic.readthedocs.io/
 
-Repository: https://bitbucket.org/thomaswaldmann/xstatic
+Repository: https://github.com/xstatic-py/xstatic (base package)
+
+Find more stuff already packaged as xstatic package there:
+
+https://github.com/xstatic-py/
+
+https://pypi.org/search/?q=xstatic
 
 Licenses:
 

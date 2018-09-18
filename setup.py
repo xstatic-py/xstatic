@@ -1,25 +1,25 @@
-# Copyright: 2011-2014 by the XStatic authors, see AUTHORS.txt for details.
+# Copyright: 2011-2018 by the XStatic authors, see AUTHORS.txt for details.
 # License: MIT license, see LICENSE.txt for details.
 
 """
 XStatic - setup.py
-
-Works with: setuptools
 """
 
-import os.path
-# The README.txt file should be written in reST so that PyPI can use
-# it to generate your project's PyPI page. 
-readme_path = os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                           'README.txt')
-with open(readme_path) as f:
-    long_description = f.read()
+import os
 
 from setuptools import setup, find_packages
 
+# The README.txt file should be written in reST so that PyPI can use
+# it to generate your project's PyPI page. 
+readme_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'README.txt')
+
+with open(readme_path) as f:
+    long_description = f.read()
+
+
 setup(
     name='XStatic',
-    version='1.0.1',
+    version='1.0.2',
     description='XStatic base package with minimal support code',
     long_description=long_description,
     classifiers=[
@@ -36,7 +36,7 @@ setup(
     keywords="xstatic static file resource python packages setuptools pypi require",
     author='Thomas Waldmann',
     author_email='tw@waldmann-edv.de',
-    url='http:/bitbucket.org/thomaswaldmann/xstatic',
+    url='https://github.com/xstatic-py/xstatic',
     license='MIT license',
     packages=find_packages(),
     namespace_packages=['xstatic', 'xstatic.pkg', ],
