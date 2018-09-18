@@ -1,4 +1,4 @@
-# Copyright: 2011-2014 by the XStatic authors, see AUTHORS.txt for details.
+# Copyright: 2011-2018 by the XStatic authors, see AUTHORS.txt for details.
 # License: MIT license, see LICENSE.txt for details.
 
 """
@@ -36,7 +36,7 @@ setup(
     keywords="xstatic static file resource python packages setuptools pypi require",
     author='Thomas Waldmann',
     author_email='tw@waldmann-edv.de',
-    url='http:/bitbucket.org/thomaswaldmann/xstatic',
+    url='https://github.com/xstatic-py/xstatic',
     license='MIT license',
     packages=find_packages(),
     namespace_packages=['xstatic', 'xstatic.pkg', ],
