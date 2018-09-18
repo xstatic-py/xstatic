@@ -29,8 +29,8 @@ steps:
   This file's content will also be shown as long description on PyPi.
   Please note that this file is written in reST markup, so that PyPi can
   generate your project's page from it.
-* If you use Mercurial, update .hgignore so it ignores:
-  ^XStatic_FooBar.egg-info/
+* If you use git (Mercurial), update .gitignore (.hgignore) so it ignores:
+  XStatic_FooBar.egg-info
 * Review all the stuff you did, make sure you did not forget anything, make
   sure there is no jquery reference left.
 * Run python setup.py sdist.
