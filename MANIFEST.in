@@ -1,7 +1,10 @@
 include README.txt
+include LICENSE.txt
+include AUTHORS.txt
+
+recursive-include docs *.rst
 
 global-exclude *.pyc
 global-exclude *.pyo
 global-exclude *.orig
 global-exclude *.rej
-
