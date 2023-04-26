@@ -8,6 +8,7 @@ XStatic - setup.py
 import os
 
 from setuptools import setup, find_packages
+import pkg_resources
 
 # The README.txt file should be written in reST so that PyPI can use
 # it to generate your project's PyPI page. 
