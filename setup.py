@@ -20,7 +20,7 @@ with open(readme_path) as f:
 
 setup(
     name='XStatic',
-    version='1.0.2',
+    version='1.0.3',
     description='XStatic base package with minimal support code',
     long_description=long_description,
     classifiers=[
