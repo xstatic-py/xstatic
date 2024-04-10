@@ -31,7 +31,6 @@ dependencies = []  # there should never be a dependency!
 # See also the MANIFEST.in file.
 # We want to install all the files in the package directories.
 include-package-data = true
-# namespace-packages = ["xstatic", "xstatic.pkg"]  # long deprecated, then removed!
 
 [tool.setuptools.packages.find]
 where = ["."]
