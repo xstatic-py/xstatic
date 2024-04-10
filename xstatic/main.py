@@ -5,7 +5,7 @@
 XStatic - main package with minimal support code to work with static file packages
 """
 
-class XStatic(object):
+class XStatic:
     """
     minimal support code to access resources from xstatic.pkg.* files
     or CDN locations.

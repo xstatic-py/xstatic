@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # XStatic documentation build configuration file, created by
 # sphinx-quickstart on Fri Jun 24 01:34:29 2011.
@@ -40,8 +39,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'XStatic'
-copyright = u'2011-2024, Thomas Waldmann'
+project = 'XStatic'
+copyright = '2011-2024, Thomas Waldmann'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -178,8 +177,8 @@ htmlhelp_basename = 'XStaticdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'XStatic.tex', u'XStatic Documentation',
-   u'Thomas Waldmann', 'manual'),
+  ('index', 'XStatic.tex', 'XStatic Documentation',
+   'Thomas Waldmann', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -211,8 +210,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'xstatic', u'XStatic Documentation',
-     [u'Thomas Waldmann'], 1)
+    ('index', 'xstatic', 'XStatic Documentation',
+     ['Thomas Waldmann'], 1)
 ]
 
 # -- Options for Texinfo output ------------------------------------------------
@@ -221,7 +220,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'XStatic', u'XStatic Documentation', u'Thomas Waldmann',
+  ('index', 'XStatic', 'XStatic Documentation', 'Thomas Waldmann',
    'XStatic', 'One line description of project.', 'Miscellaneous'),
 ]
 
