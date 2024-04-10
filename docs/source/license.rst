@@ -6,5 +6,5 @@ License
 Authors
 =======
 
-.. include:: ../../AUTHORS.txt
+.. include:: ../../AUTHORS.rst
 

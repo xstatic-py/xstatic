@@ -1,2 +1,2 @@
-# Copyright: 2011-2024 by the XStatic authors, see AUTHORS.txt for details.
+# Copyright: 2011-2024 by the XStatic authors, see AUTHORS.rst for details.
 # License: MIT license, see LICENSE.txt for details.
