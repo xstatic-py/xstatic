@@ -33,7 +33,7 @@ dependencies = []  # there should never be a dependency!
 include-package-data = true
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 
 [build-system]
 requires = ["setuptools", "wheel", ]
