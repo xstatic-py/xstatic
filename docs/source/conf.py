@@ -40,7 +40,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'XStatic'
-copyright = '2011-2024, Thomas Waldmann'
+copyright = '2011-2025, Thomas Waldmann'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
