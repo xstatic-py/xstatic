@@ -1,0 +1,40 @@
+# Copyright: 2011-2025 by the XStatic authors, see AUTHORS.rst for details.
+# License: MIT license, see LICENSE.txt for details.
+
+[project]
+name = "XStatic"
+version = "2.0.0"
+description = "XStatic base package with minimal support code"
+readme = {file="README.rst", content-type="text/x-rst"}
+authors = [{name="Thomas Waldmann", email="tw@waldmann-edv.de"}, ]
+maintainers = [{name="Thomas Waldmann", email="tw@waldmann-edv.de"}, ]
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Archiving :: Packaging",
+    "Topic :: System :: Installation/Setup",
+    "Topic :: System :: Software Distribution",
+]
+keywords = ["xstatic", "static", "file", "resource", "python", "packages", "pypi", "require"]
+license = "MIT"
+dependencies = []  # there should never be a dependency!
+
+[project.urls]
+"Homepage" = "https://github.com/xstatic-py/xstatic"
+
+[tool.setuptools]
+# See also the MANIFEST.in file.
+# We want to install all the files in the package directories.
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools", "wheel", ]
+build-backend = "setuptools.build_meta"

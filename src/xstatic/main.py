@@ -1,11 +1,11 @@
-# Copyright: 2011-2018 by the XStatic authors, see AUTHORS.txt for details.
+# Copyright: 2011-2025 by the XStatic authors, see AUTHORS.rst for details.
 # License: MIT license, see LICENSE.txt for details.
 
 """
 XStatic - main package with minimal support code to work with static file packages
 """
 
-class XStatic(object):
+class XStatic:
     """
     minimal support code to access resources from xstatic.pkg.* files
     or CDN locations.
@@ -25,7 +25,7 @@ class XStatic(object):
                              ])
         self.provider = provider
         if provider == 'local':
-            self.base_url = "%s/%s" % (root_url, self.name)
+            self.base_url = f"{root_url}/{self.name}"
         else:
             self.base_url = self.locations[(provider, protocol)]
 
@@ -45,7 +45,7 @@ class XStatic(object):
         """
         loc = self.base_url
         if isinstance(loc, str):
-            loc = "%s/%s" % (loc, path)
+            loc = f"{loc}/{path}"
         elif isinstance(loc, dict):
             loc = loc[path]
         return loc
