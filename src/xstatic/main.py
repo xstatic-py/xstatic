@@ -1,16 +1,18 @@
-# Copyright: 2011-2025 by the XStatic authors, see AUTHORS.rst for details.
+# Copyright: 2011-2026 by the XStatic authors, see AUTHORS.rst for details.
 # License: MIT license, see LICENSE.txt for details.
 
 """
 XStatic - main package with minimal support code to work with static file packages
 """
 
+
 class XStatic:
     """
     minimal support code to access resources from xstatic.pkg.* files
     or CDN locations.
     """
-    def __init__(self, module, root_url='/xstatic', provider='local', protocol='http'):
+
+    def __init__(self, module, root_url="/xstatic", provider="local", protocol="http"):
         """
         :arg module: xstatic resource package/module, has metadata as attributes
         :arg root_url: the common root url path for all local xstatic
@@ -19,12 +21,15 @@ class XStatic:
                        a name of another source (e.g. CDN)
         :arg protocol: 'http' (default) or 'https'
         """
-        self.__dict__.update([(name.lower(), getattr(module, name))
-                              for name in dir(module)
-                              if name.isupper()
-                             ])
+        self.__dict__.update(
+            [
+                (name.lower(), getattr(module, name))
+                for name in dir(module)
+                if name.isupper()
+            ]
+        )
         self.provider = provider
-        if provider == 'local':
+        if provider == "local":
             self.base_url = f"{root_url}/{self.name}"
         else:
             self.base_url = self.locations[(provider, protocol)]
@@ -34,7 +39,7 @@ class XStatic:
         query the mapping url -> directory, use this to setup
         your own static file serving.
         """
-        if self.provider == 'local':
+        if self.provider == "local":
             return self.base_url, self.base_dir
 
     def url_for(self, path):
@@ -49,4 +54,3 @@ class XStatic:
         elif isinstance(loc, dict):
             loc = loc[path]
         return loc
-
