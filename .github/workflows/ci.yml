@@ -1,79 +1,74 @@
 # badge: https://github.com/xstatic-py/xstatic/workflows/CI/badge.svg?branch=master
-
+---
 name: CI
-
 on:
   push:
-    branches: [ master ]
+    branches: ["master"]
     paths:
-    - '**.py'
-    - '**.yml'
-    - '**.toml'
-    - '!docs/**'
+      - '**.py'
+      - '**.yml'
+      - '**.toml'
+      - '!docs/**'
   pull_request:
-    branches: [ master ]
+    branches: ["master"]
     paths:
-    - '**.py'
-    - '**.yml'
-    - '**.toml'
-    - '!docs/**'
+      - '**.py'
+      - '**.yml'
+      - '**.toml'
+      - '!docs/**'
 
 jobs:
   lint:
-
     runs-on: ubuntu-24.04
     timeout-minutes: 5
-
     steps:
-    - uses: actions/checkout@v4
-    - uses: chartboost/ruff-action@v1
+      - uses: actions/checkout@v7
+      - uses: astral-sh/ruff-action@v4.1.0
 
   CI:
-
     needs: lint
     strategy:
       fail-fast: false
       matrix:
         include:
-            - os: macos-latest
-              python-version: '3.9'
-            - os: ubuntu-24.04
-              python-version: '3.10'
-            - os: ubuntu-24.04
-              python-version: '3.11'
-            - os: ubuntu-24.04
-              python-version: '3.12'
-            - os: ubuntu-24.04
-              python-version: '3.13'
-
+          - os: macos-latest
+            python-version: '3.9'
+          - os: ubuntu-24.04
+            python-version: '3.10'
+          - os: ubuntu-24.04
+            python-version: '3.11'
+          - os: ubuntu-24.04
+            python-version: '3.12'
+          - os: ubuntu-24.04
+            python-version: '3.13'
+          - os: ubuntu-26.04
+            python-version: '3.14'
     env:
       TOXENV: ${{ matrix.toxenv }}
-
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
-
     steps:
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install Python requirements
-      run: |
-        python -m pip install --upgrade pip setuptools wheel build
-    - name: try building a package
-      run: python -m build
-    - name: Install and import xstatic packages (modernize branch)
-      run: |
-        python -m venv venv
-        . venv/bin/activate
-        pip install .
-        pip install git+https://github.com/xstatic-py/xstatic-bootstrap.git@modernize
-        pip install git+https://github.com/xstatic-py/xstatic-font-awesome.git@modernize
-        python -c "import xstatic; print('Importing...')"
-        python -c "from xstatic.pkg import bootstrap as xs; assert xs.NAME == 'bootstrap'"
-        python -c "from xstatic.pkg import font_awesome as xs; assert xs.NAME == 'font_awesome'"
-        deactivate
-        rm -rf venv
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Python requirements
+        run: |
+          python -m pip install --upgrade pip setuptools wheel build
+      - name: try building a package
+        run: python -m build
+      - name: Install and import xstatic packages (modernize branch)
+        run: |
+          python -m venv venv
+          . venv/bin/activate
+          pip install .
+          pip install git+https://github.com/xstatic-py/xstatic-bootstrap.git@modernize
+          pip install git+https://github.com/xstatic-py/xstatic-font-awesome.git@modernize
+          python -c "import xstatic; print('Importing...')"
+          python -c "from xstatic.pkg import bootstrap as xs; assert xs.NAME == 'bootstrap'"
+          python -c "from xstatic.pkg import font_awesome as xs; assert xs.NAME == 'font_awesome'"
+          deactivate
+          rm -rf venv
