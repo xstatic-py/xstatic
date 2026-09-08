@@ -1,5 +1,9 @@
-# Copyright: 2011-2025 by the XStatic authors, see AUTHORS.rst for details.
+# Copyright: 2011-2026 by the XStatic authors, see AUTHORS.rst for details.
 # License: MIT license, see LICENSE.txt for details.
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "XStatic"
@@ -8,7 +12,7 @@ description = "XStatic base package with minimal support code"
 readme = {file="README.rst", content-type="text/x-rst"}
 authors = [{name="Thomas Waldmann", email="tw@waldmann-edv.de"}, ]
 maintainers = [{name="Thomas Waldmann", email="tw@waldmann-edv.de"}, ]
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
@@ -34,7 +38,3 @@ include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
-
-[build-system]
-requires = ["setuptools", "wheel", ]
-build-backend = "setuptools.build_meta"
